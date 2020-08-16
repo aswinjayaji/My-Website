@@ -1,0 +1,119 @@
+{% load static %}
+<html>
+<head>
+    <!--link rel="stylesheet" href="{% static 'css/login theme2.css' %}" -->
+    <link rel="stylesheet" href="{% static 'css/login theme1.css' %}" >
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+
+            <form action="" method="POST" id="contact-form" class="main-form needs-validation" role="form" novalidate>
+            {% csrf_token %}
+                <h3>Create Account</h3>
+                <div class="form-group">
+                    <label>
+                        {{ form.username }}
+                        <small class="my_place">Username</small>
+                        <div class="invalid-feedback">&nbsp</div>
+                    </label>
+                </div> 
+
+                <div class="form-group">
+                    <label>
+                        
+                        {{ form.email }}
+                        <small class="my_place">Your email</small>
+                        <div class="invalid-feedback">&nbsp</div>
+                    </label>
+                </div>   
+
+                <div class="form-group">
+                    <label>
+                        
+                        {{ form.password1 }}
+                        <small class="my_place">Your password</small>
+                        <div class="invalid-feedback">&nbsp</div>
+
+                    </label>
+                </div>  
+                <div class="form-group">
+                    <label>
+                        {{ form.password2 }}
+                        <small class="my_place">Confirm password</small>
+                        <div class="invalid-feedback">&nbsp</div>
+
+                    </label>
+                </div> 
+
+                <div class="form-group text-center">
+                    <input type="submit" class="btn btn-primary mt-2 mx-auto" value="CREATE USER" >
+                </div>
+                
+            </form>
+            {{ form.errors }}
+            
+ 
+        </div>
+
+        <div class="form-container sign-in-container">
+
+            <form action="" method="POST" id="contact-form" class="main-form needs-validation" role="form" novalidate>
+                {% csrf_token %}
+                <h3>Sign In</h3>
+        
+
+                <div class="form-group">
+                    <label>
+                        <input type="text" id="form_email" name="usern" class="my_form-control" required>
+                        <small class="my_place">Your Username</small>
+                        <div class="invalid-feedback">&nbsp</div>
+                    </label>
+                </div>   
+
+                <div class="form-group">
+                    <label>
+                        <input type="password" id="form_password" name="passw" class="my_form-control" required>
+                        <small class="my_place">Your password</small>
+                        <div class="invalid-feedback">&nbsp</div>
+
+                    </label>
+                </div>  
+
+                <div class="form-group text-center">
+                    <input type="submit" class="btn btn-primary mt-2 mx-auto" value="SIGN IN" >
+                </div>
+
+                <div class="form-group mt-2 text-center">
+                    <span class="forgot">Forgot password ?</span>
+                </div>
+
+            </form>
+           {% for message in messages %}
+              <small class="my_place" >{{ message }} </small>
+            {% endfor %}
+        </div>
+
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <button class="ghost" id="signIn">SIGN IN</button>
+                  
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello World!</h1>
+                    <p>Lorem ipsum dolor sit amet,<br>
+                        sed do eiusmod tempor incididunt.</p>
+                    <button class="ghost" id="signUp">CREATE ACCOUNT</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="{% static 'js/login-register.js' %}"></script>
+</html>

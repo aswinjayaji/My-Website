@@ -1,0 +1,102 @@
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Creative SignUp Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="application/x-javascript">
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!-- Custom Theme files -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <!-- //Custom Theme files -->
+  <!-- web font -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+  <!-- //web font -->
+</head>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" 
+         href="{% static 'css/register.css' %}" />
+
+<body>
+  <!-- main -->
+  <div class="main-w3layouts wrapper">
+    <h1> SignUp </h1>
+    <div class="main-agileinfo">
+      <div class="agileits-top">
+        <form method="POST" action="">
+          {% csrf_token %}
+          {{ form.username }}
+          {{ form.email }}
+          {{ form.password1 }}
+          {{ form.password2 }}
+          <div class="wthree-text">
+            <label class="anim">
+              <input type="checkbox" class="checkbox" required="">
+              <span>I Agree To The Terms & Conditions</span>
+            </label>
+            <div class="clear"> </div>
+          </div>
+          <input type="submit" value="SIGNUP">
+        </form>
+        <p>Don't have an Account? <a href="#"> Login Now!</a></p>
+      </div>
+    </div>
+    <!-- copyright -->
+    <div class="colorlibcopy-agile">
+      <p>© 2020 Signup Form. All rights reserved | Design by <a href="http://aswinjayaji.pythonanywhere.com/"
+          target="_blank">Aswin Jayaji</a></p>
+    </div>
+    <!-- //copyright -->
+    <ul class="colorlib-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <!-- //main -->
+
+</body>
+
+</html>
+<!--##########################################
+
+<form method = "POST" action ="">
+    {% csrf_token %}-->
+{% comment "" %}
+{% for field in form %}
+{{ field.label }}
+<!--field is just a variable like i-->
+{{ field }}
+{% endfor %}
+{% endcomment %}
+<!--{{ form.as_p }}#simple way of showing from-->
+<!--
+    {{ form.username.label }}
+    {{ form.username }}
+    {{ form.email.label }}
+    {{ form.email }}
+    /////{{ form.as_p }}#simple way of showing from
+    <input type="submit" name= "Create User">
+</form-->
