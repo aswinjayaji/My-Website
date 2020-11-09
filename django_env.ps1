@@ -1,4 +1,4 @@
 cd ..
 .\django\Scripts\activate.ps1
-cd aswinjayaji
+cd MyWebSite
 python manage.py runserver
